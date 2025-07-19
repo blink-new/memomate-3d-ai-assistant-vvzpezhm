@@ -32,6 +32,7 @@ import AIChat from './components/AIChat'
 import Timeline from './components/Timeline'
 import SmartReminders from './components/SmartReminders'
 import Analytics from './components/Analytics'
+import TaskSharingHub from './components/TaskSharingHub'
 import AppDock from './components/AppDock'
 import SettingsPanel from './components/SettingsPanel'
 import GlobalControls from './components/GlobalControls'
@@ -163,6 +164,19 @@ function App() {
             <Analytics />
           </motion.div>
         </section>
+
+        {/* Section 5: Task Sharing Hub */}
+        <section className="snap-section" id="task-sharing">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="container mx-auto px-4"
+          >
+            <TaskSharingHub />
+          </motion.div>
+        </section>
       </main>
 
       {/* Settings Panel */}
@@ -175,7 +189,7 @@ function App() {
 
       {/* Floating Navigation Dots */}
       <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 space-y-4">
-        {['AI Chat', 'Timeline', 'Reminders', 'Analytics'].map((label, index) => (
+        {['AI Chat', 'Timeline', 'Reminders', 'Analytics', 'Task Sharing'].map((label, index) => (
           <motion.button
             key={index}
             onClick={() => scrollToSection(index)}
